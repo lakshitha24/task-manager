@@ -14,6 +14,7 @@ const createTaks = asyncWrapper(async (req, res) => {
     task,
   });
 });
+
 const getTask = asyncWrapper(async (req, res) => {
   const { id: taskID } = req.params;
   const task = await Task.findOne({
@@ -28,6 +29,7 @@ const getTask = asyncWrapper(async (req, res) => {
     task,
   });
 });
+
 const updateTask = asyncWrapper(async (req, res) => {
   const { id: taskID } = req.params;
   const task = await Task.findOneAndUpdate(
@@ -49,6 +51,7 @@ const updateTask = asyncWrapper(async (req, res) => {
     task,
   });
 });
+
 const deleteTask = asyncWrapper(async (req, res) => {
   const { id: taskID } = req.params;
   const task = await Task.findByIdAndDelete({
