@@ -1,5 +1,6 @@
 const Task = require("../models/Task");
 const asyncWrapper = require("../middeleware/async");
+const { createCustomerError } = require('../errors/custom-error');
 
 const getAllTasks = asyncWrapper(async (req, res) => {
   const tasks = await Task.find({});
@@ -21,9 +22,7 @@ const getTask = asyncWrapper(async (req, res) => {
     _id: taskID,
   });
   if (!task) {
-    return res.status(404).json({
-      msg: `can t find task id : ${taskID}`,
-    });
+    return next(createCustomerError(`can t find task id : ${taskID}`))
   }
   res.status(201).json({
     task,
@@ -43,9 +42,7 @@ const updateTask = asyncWrapper(async (req, res) => {
     }
   );
   if (!task) {
-    return res.status(404).json({
-      msg: `can t find task id : ${taskID}`,
-    });
+    return next(createCustomerError(`can t find task id : ${taskID}`))
   }
   res.status(200).json({
     task,
@@ -58,9 +55,7 @@ const deleteTask = asyncWrapper(async (req, res) => {
     _id: taskID,
   });
   if (!task) {
-    return res.status(404).json({
-      msg: `can t find task id : ${taskID}`,
-    });
+    return next(createCustomerError(`can t find task id : ${taskID}`))
   }
   res.status(201).json({
     task,
