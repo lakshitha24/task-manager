@@ -1,11 +1,11 @@
 {
   "name": "task-manager",
   "version": "1.0.0",
-  "description": "",
+  "description": "https://documenter.getpostman.com/view/249099/2s935kPkgw",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start":"nodemon app.js"
+    "start": "nodemon app.js"
   },
   "keywords": [],
   "author": "",
@@ -17,5 +17,13 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.20"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lakshitha24/task-manager.git"
+  },
+  "bugs": {
+    "url": "https://github.com/lakshitha24/task-manager/issues"
+  },
+  "homepage": "https://github.com/lakshitha24/task-manager#readme"
 }
